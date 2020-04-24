@@ -40,7 +40,7 @@ public class GFG
 
         for (int windowSize = arr.Length - 1; windowSize > 0; windowSize--)
         {
-            for (int startIndex = 0; startIndex < arr.Length; startIndex++)
+            for (int startIndex = 0; startIndex + windowSize - 1 < arr.Length; startIndex++)
             {
                 var endIndex = startIndex + windowSize - 1;
                 if (endIndex == startIndex)
