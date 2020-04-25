@@ -1,7 +1,7 @@
 /*
 Url:-https://leetcode.com/problems/contiguous-array/
 
-Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
+Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
 
 Solution Approach:-Hash Based.
 
