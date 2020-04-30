@@ -36,15 +36,18 @@ public class Solution
         {
             return false;
         }
+        //If the current node contains any matching  value.
         if (node == n1 || node == n2)
         {
             localIsTrue = true;
         }
 
+        //If both child nodes are null
         if (node.left == null && node.right == null)
         {
             return localIsTrue;
         }
+
         var leftSide = SetCommonNode(node.left, n1, n2);
         if (localIsTrue && leftSide)
         {
@@ -61,6 +64,8 @@ public class Solution
         {
             CommonNode = node;
         }
+
+        //Current Node can also contain the value
         return leftSide || rightSide || localIsTrue;
     }
 }
