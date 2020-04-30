@@ -63,6 +63,8 @@ public class TreeNode
         private static TreeNode GetInorderPredecessor(TreeNode current)
         {
             var inOrderPredecessorNode = current.left;
+            //Finding Extreme right node of the left subtree
+            //inOrderPredecessorNode.right != current check is added to detect loop
             while (inOrderPredecessorNode.right != null && inOrderPredecessorNode.right != current)
             {
                 inOrderPredecessorNode = inOrderPredecessorNode.right;
