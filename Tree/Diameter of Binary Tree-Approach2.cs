@@ -1,6 +1,6 @@
 
 /*
-Url:-https://www.geeksforgeeks.org/diameter-of-a-binary-tree/
+Url:-https://leetcode.com/problems/diameter-of-binary-tree/
 
 Diameter of a Binary Tree.
 The diameter of a binary tree is the length of the longest path between any two nodes in a tree. 
