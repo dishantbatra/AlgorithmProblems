@@ -24,7 +24,6 @@ using System.Linq;
 
         public static void CountTheReversal(string braces)
         {
-            var sb = new StringBuilder();
             var stack = new Stack<char>();
             CompareBraces(braces, stack);
             if (stack.Count == 0)
@@ -33,47 +32,24 @@ using System.Linq;
             }
             else
             {
-                PrintReversalCount(stack, sb);
-            }
-        }
-
-        private static void PrintReversalCount(Stack<char> stack, StringBuilder sb)
-        {
-            var count = 0;
-            var reversalStack = new Stack<char>();
-            while (stack.Count != 0)
-            {
-                sb.Append(stack.Pop());
-            }
-
-            var s = new string(sb.ToString().Reverse().ToArray());
-            foreach (var c in s)
-            {
-                if (reversalStack.Count == 0 && c == '}')
-                {
-                    count++;
-                    reversalStack.Push('{');
+                if(stack.Count%2!=0){
+                    Console.WriteLine(-1);
+                    return;
                 }
-                else
-                {
-                    if (reversalStack.Count > 0 && reversalStack.Peek() == '{' && c == '}')
-                    {
-                        reversalStack.Pop();
-                    }
-                    else
-                    {
-                        reversalStack.Push(c);
-                    }
+                int leftBrace =0;
+                int rightBrace=0;
+                while(stack.Count!=0){
+                    if(stack.Pop()=='}') rightBrace++;
+                    else leftBrace++;
                 }
-            }
+                //Braces pattern obtained after executing CompareBraces function is of the form }}{{{{{{
+                //Basically it is of the form right braces is on left side and left braces on right side
+                // if the count of left+right braces is even then we find count otherwise we return-1
+                // if left and right braces both of them are even then count will (left+right)/2 }}{{  
+                // if left and right is odd  then we will have case }}}{{{  in the middle }{ it require
+                // two reverse 
 
-            if (reversalStack.Count % 2 == 0)
-            {
-                Console.WriteLine(count + reversalStack.Count / 2);
-            }
-            else
-            {
-                Console.WriteLine(-1);
+                Console.WriteLine((leftBrace+rightBrace)/2 + leftBrace%2);
             }
         }
 
