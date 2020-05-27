@@ -8,10 +8,6 @@ Note: Expected time complexity is O(N) with constant extra space.
 
 Solution Approach:Traverse
 */
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
 
  class Celebrity
 {
